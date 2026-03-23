@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -15,7 +15,7 @@ const container = {
   },
 };
 
-const revealUp = {
+const revealUp: Variants = {
   hidden: { opacity: 0, y: 70 },
   show: {
     opacity: 1,
@@ -27,7 +27,7 @@ const revealUp = {
   },
 };
 
-const revealFade = {
+const revealFade: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
@@ -158,14 +158,14 @@ export function HeroSection() {
             <div className="glass-card relative overflow-hidden p-3">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[26px]">
                 <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="absolute inset-0 h-full w-full object-cover"
->
-  <source src="/videos/hero-workout.mp4" type="video/mp4" />
-</video>
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover"
+                >
+                  <source src="/videos/hero-workout.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
               </div>
 
