@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import {motion} from "framer-motion";
-import {ArrowRight, Play, ChevronDown} from "lucide-react";
+import { motion, Variants } from "framer-motion";
+import { ArrowRight, Play, ChevronDown } from "lucide-react";
 
-const fadeUp = {
-  hidden: {opacity: 0, y: 30},
-  show: (delay = 0) => ({
+// Explicitly typing as Variants allows the use of cubic-bezier arrays in 'ease'
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -20,6 +21,7 @@ const fadeUp = {
 export default function PremiumHero() {
   return (
     <section className="relative overflow-hidden bg-[#f5f7fb]">
+      {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[-10%] top-[-10%] h-72 w-72 rounded-full bg-emerald-200/30 blur-3xl" />
         <div className="absolute right-[-6%] top-[15%] h-80 w-80 rounded-full bg-slate-300/40 blur-3xl" />
@@ -30,6 +32,7 @@ export default function PremiumHero() {
       <div className="mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-16 pt-28 sm:px-8 lg:px-10">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="relative z-10">
+            {/* Tagline */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -40,6 +43,7 @@ export default function PremiumHero() {
               Get Fit With Purna
             </motion.div>
 
+            {/* Main Headline */}
             <motion.h1
               variants={fadeUp}
               initial="hidden"
@@ -52,6 +56,7 @@ export default function PremiumHero() {
               <span className="block">and lasts.</span>
             </motion.h1>
 
+            {/* Description */}
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -64,6 +69,7 @@ export default function PremiumHero() {
               Train with structure. Eat with clarity. Progress with purpose.
             </motion.p>
 
+            {/* CTAs */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -88,6 +94,7 @@ export default function PremiumHero() {
               </Link>
             </motion.div>
 
+            {/* Quick Stats/Features */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -107,10 +114,11 @@ export default function PremiumHero() {
             </motion.div>
           </div>
 
+          {/* Visual Card Section */}
           <motion.div
-            initial={{opacity: 0, scale: 0.95, y: 20}}
-            animate={{opacity: 1, scale: 1, y: 0}}
-            transition={{duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1]}}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10"
           >
             <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-slate-900 p-3 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
@@ -127,9 +135,7 @@ export default function PremiumHero() {
 
                   <div className="space-y-5">
                     <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                      <p className="text-xs uppercase tracking-[0.22em] text-white/50">
-                        Focus
-                      </p>
+                      <p className="text-xs uppercase tracking-[0.22em] text-white/50">Focus</p>
                       <p className="mt-2 text-2xl font-semibold text-white">
                         Fat loss • Muscle gain • Sustainable results
                       </p>
@@ -137,18 +143,14 @@ export default function PremiumHero() {
 
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                        <p className="text-xs uppercase tracking-[0.22em] text-white/50">
-                          Method
-                        </p>
+                        <p className="text-xs uppercase tracking-[0.22em] text-white/50">Method</p>
                         <p className="mt-3 text-lg font-medium text-white">
                           Training plans built around your real lifestyle
                         </p>
                       </div>
 
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                        <p className="text-xs uppercase tracking-[0.22em] text-white/50">
-                          Outcome
-                        </p>
+                        <p className="text-xs uppercase tracking-[0.22em] text-white/50">Outcome</p>
                         <p className="mt-3 text-lg font-medium text-white">
                           Stronger body, better energy, more confidence
                         </p>
@@ -156,9 +158,7 @@ export default function PremiumHero() {
                     </div>
 
                     <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/10 p-5 backdrop-blur">
-                      <p className="text-xs uppercase tracking-[0.22em] text-emerald-200">
-                        Start now
-                      </p>
+                      <p className="text-xs uppercase tracking-[0.22em] text-emerald-200">Start now</p>
                       <p className="mt-2 text-lg font-medium text-white">
                         Build momentum with coaching that feels structured,
                         premium, and personal.
@@ -172,11 +172,12 @@ export default function PremiumHero() {
         </div>
       </div>
 
+      {/* Scroll Indicator */}
       <motion.a
         href="#home-stats"
-        initial={{opacity: 0, y: 8}}
-        animate={{opacity: 1, y: 0}}
-        transition={{delay: 1, duration: 0.7}}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.7 }}
         className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 text-sm font-medium text-slate-500 lg:inline-flex"
       >
         Scroll to explore

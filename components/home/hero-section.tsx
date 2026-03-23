@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants import
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 
+// Explicitly typing as Variants allows the use of cubic-bezier arrays in 'ease'
 const container: Variants = {
   hidden: {},
   show: {
