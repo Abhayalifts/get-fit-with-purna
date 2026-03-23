@@ -1,25 +1,24 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 1. Keeps the build moving even if there are small linting/type issues
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Allows the build to proceed even if there are minor warnings
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  // 2. REQUIRED if you are pulling images from Sanity or Supabase
+  
+  // Required for external assets (Sanity/Supabase)
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
-        port: '',
       },
       {
         protocol: 'https',
-        hostname: 'your-supabase-project-id.supabase.co', // Replace with your actual Supabase ID later
-        port: '',
+        hostname: '*.supabase.co',
       },
     ],
   },
